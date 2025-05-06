@@ -7,9 +7,8 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
 export const metadata = {
-  title: "Галерея сертификатов - Филиал РГСУ в городе Минске",
-  description: "Галерея сертификатов Филиала РГСУ в городе Минске",
-    generator: 'v0.dev'
+  title: "Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске",
+  description: "Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске",    
 }
 
 export default function RootLayout({
@@ -21,7 +20,12 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <head>
         {/* Предзагрузка логотипа для быстрого отображения */}
-        <link rel="preload" href="/images/logo.png" as="image" />
+        <link rel="icon" href="/favicon.png" />
+        <link rel="preload" href="/logo.png" as="image" />
+        <meta name="description" content="Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске"/>
+        <meta property="og:site_name" content="DiktantPobedy.vercel.app" />
+        <meta property="og:title" content="Диктант Победы 2025" />
+        <meta property="og:description" content="Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске"/>
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

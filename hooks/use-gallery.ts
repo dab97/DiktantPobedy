@@ -36,7 +36,7 @@ export function useGallery() {
           {
             id: "logo",
             title: "Логотип",
-            url: "/images/logo.png",
+            url: "/logo.png",
             description: "Логотип Диктант Победы",
             isLogo: true,
           },
@@ -146,7 +146,7 @@ function getDemoImages(): Image[] {
   const logoImage: Image = {
     id: "logo",
     title: "Логотип",
-    url: "/images/logo.png",
+    url: "/logo.png",
     description: "Логотип Диктант Победы",
     isLogo: true,
   }

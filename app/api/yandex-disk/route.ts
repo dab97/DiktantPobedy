@@ -13,7 +13,7 @@ export async function GET(request: Request) {
       {
         id: "logo",
         title: "Логотип",
-        url: "/images/logo.png",
+        url: "/logo.png",
         description: "Логотип Диктант Победы",
       },
       // Примеры изображений для демонстрации
