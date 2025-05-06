@@ -112,7 +112,7 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
           />
 
           {/* Кнопки навигации внутри изображения */}
-          <TooltipProvider className="p-4">
+          <TooltipProvider>
             {/* Кнопка "Предыдущее изображение" - слева по центру */}
             <div
               className={`absolute left-2 top-1/2 -translate-y-1/2 transition-opacity duration-300 ${
