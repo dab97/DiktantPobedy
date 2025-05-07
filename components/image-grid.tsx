@@ -48,7 +48,7 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
         return (
           <div
             key={image.id}
-            className={`aspect-[3/4] relative rounded-lg overflow-hidden ${isLogo ? "" : "cursor-pointer group"}`}
+            className={`relative rounded-lg overflow-hidden ${isLogo ? "" : "cursor-pointer group"}`}
             onClick={() => onImageClick(image)}
           >
             {!loadedImages[image.id] && (
@@ -59,12 +59,14 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
             <Image
               src={image.url || "/placeholder.svg"}
               alt={image.title}
-              fill
-              quality="85"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              blurDataURL="data:..."
-              placeholder="blur"
+              width={364} // Добавлено: явное указание ширины
+              height={515} // Добавлено: явное указание высоты
+              quality={75} // Изменено: снижено качество для ускорения загрузки
+              loading="lazy" // Оставлено: ленивая загрузка
+              priority={false} // Добавлено: явное отключение приоритетной загрузки
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" // Уточнены брейкпоинты
+              placeholder="blur" // Оставлено: размытый плейсхолдер
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" // Простой плейсхолдер
               className={`object-cover transition-all duration-300 ${
                 !isLogo ? "group-hover:scale-105" : ""
               } ${loadedImages[image.id] ? "opacity-100" : "opacity-0"}`}
