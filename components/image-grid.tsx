@@ -60,12 +60,15 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
               src={image.url || "/placeholder.svg"}
               alt={image.title}
               fill
+              quality="85"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               blurDataURL="data:..."
               placeholder="blur"
               className={`object-cover transition-all duration-300 ${
                 !isLogo ? "group-hover:scale-105" : ""
               } ${loadedImages[image.id] ? "opacity-100" : "opacity-0"}`}
-              onLoad={() => handleImageLoad(image.id)}
+              onLoad={() => handleImageLoad(image.id)}              
             />
             {!isLogo && (
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">

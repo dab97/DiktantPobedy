@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
         <link rel="preload" href="/logo.png" as="image" />
         <meta name="description" content="Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске"/>
-        <meta property="og:site_name" content="diktant-pobedy.vercel.app" />
+        <meta property="og:site_name" content="diktant-pobedy.vercel.app/" />
         <meta property="og:title" content="Диктант Победы 2025" />
         <meta property="og:description" content="Сертификаты Диктанта Победы 2025 - Филиал РГСУ в городе Минске"/>
       </head>
