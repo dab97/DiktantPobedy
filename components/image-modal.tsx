@@ -221,7 +221,7 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
 
             {/* Информация о текущем изображении */}
             <div
-              className={`absolute bottom-2 left-2 bg-black/40 px-3 py-1 rounded-full text-white text-sm transition-opacity duration-300 ${
+              className={`absolute bottom-2 left-2 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-mono transition-opacity duration-300 ${
                 showControls ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -230,7 +230,7 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
 
             {/* Название изображения */}
             <div
-              className={`absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/40 px-4 py-2 rounded-lg text-white text-sm transition-opacity duration-300 max-w-[80%] ${
+              className={`absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-lg text-white font-light text-sm transition-opacity duration-300 max-w-[80%] ${
                 showControls ? "opacity-100" : "opacity-0"
               }`}
             >
