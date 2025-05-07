@@ -73,9 +73,9 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
               onLoad={() => handleImageLoad(image.id)}              
             />
             {!isLogo && (
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
                 <div className="p-3 text-white w-full">
-                  <h3 className="text-sm font-medium truncate">{image.title}</h3>
+                  <h3 className="text-sm font-medium truncate text-center">{image.title}</h3>
                 </div>
               </div>
             )}
