@@ -107,6 +107,8 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
             className="max-h-screen max-w-full object-contain rounded-lg"
             width={660}
             height={1400}
+            blurDataURL="data:..."
+            placeholder="blur"
             onLoad={() => setIsLoading(false)}
             priority
           />
