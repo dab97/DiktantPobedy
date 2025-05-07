@@ -48,7 +48,7 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
         return (
           <div
             key={image.id}
-            className={`relative rounded-lg overflow-hidden ${isLogo ? "" : "cursor-pointer group"}`}
+            className={`relative rounded-lg overflow-hidden ${isLogo ? "dark:border dark:border-destructive" : "cursor-pointer group"}`}
             onClick={() => onImageClick(image)}
           >
             {!loadedImages[image.id] && (
