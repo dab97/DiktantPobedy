@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
-import ImageGrid from "@/components/image-grid"
-import ImageModal from "@/components/image-modal"
-import { useGallery } from "@/hooks/use-gallery"
-import GalleryHeader from "@/components/gallery-header"
-import GalleryFooter from "@/components/gallery-footer"
+import type React from "react";
+import ImageGrid from "@/components/image-grid";
+import ImageModal from "@/components/image-modal";
+import { useGallery } from "@/hooks/use-gallery";
+import GalleryHeader from "@/components/gallery-header";
+import GalleryFooter from "@/components/gallery-footer";
+import { MobileMenu } from "@/components/mobile-menu";
 
 export default function Gallery() {
   const {
@@ -18,18 +19,28 @@ export default function Gallery() {
     handleCloseModal,
     handlePrevImage,
     handleNextImage,
-  } = useGallery()
+  } = useGallery();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value)
-  }
+    setSearchQuery(e.target.value);
+  };
 
   return (
-    <div className="container mx-auto px-4 pt-4 flex flex-col min-h-screen">
-      <GalleryHeader searchQuery={searchQuery} onSearchChange={handleSearch} />
+    <div className="container mx-auto p-4 md:p-0 flex flex-col min-h-screen">
+      {/* Десктопный хедер - скрывается на мобильных устройствах */}
+      <div className="hidden md:block">
+        <GalleryHeader
+          searchQuery={searchQuery}
+          onSearchChange={handleSearch}
+        />
+      </div>
 
-      <main className="flex-grow mb-6">
-        <ImageGrid images={filteredImages} isLoading={isLoading} onImageClick={handleImageClick} />
+      <main className="flex-grow mb-6 pb-16 md:pb-0">
+        <ImageGrid
+          images={filteredImages}
+          isLoading={isLoading}
+          onImageClick={handleImageClick}
+        />
       </main>
 
       <GalleryFooter />
@@ -43,6 +54,8 @@ export default function Gallery() {
           allImages={filteredImages.filter((img) => !img.isLogo)}
         />
       )}
+    {/* Мобильное меню внизу экрана */}
+    <MobileMenu searchQuery={searchQuery} onSearchChange={handleSearch} />
     </div>
-  )
+  );
 }

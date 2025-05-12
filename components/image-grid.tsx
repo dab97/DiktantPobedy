@@ -41,7 +41,7 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {images.map((image) => {
         const isLogo = image.isLogo
 
@@ -59,7 +59,7 @@ export default function ImageGrid({ images, isLoading, onImageClick }: ImageGrid
             <Image
               src={image.url || "/placeholder.svg"}
               alt={image.title}
-              width={364} // Добавлено: явное указание ширины
+              width={372} // Добавлено: явное указание ширины
               height={515} // Добавлено: явное указание высоты
               quality={75} // Изменено: снижено качество для ускорения загрузки
               loading="lazy" // Оставлено: ленивая загрузка

@@ -85,15 +85,11 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-100/75 to-white/78 backdrop-blur-[10px] dark:from-gray-800/75 dark:to-black/78"
       onMouseMove={handleMouseMove}
-      style={{
-        background: "radial-gradient(circle, rgba(25,25,25,0.95) 0%, rgba(0,0,0,0.98) 100%)",
-        backdropFilter: "blur(10px)",
-      }}
     >
       {/* Основной контейнер для изображения */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-full h-full flex items-center justify-center p-4">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center">
             <Skeleton className="h-full w-full absolute" />
@@ -221,7 +217,7 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
 
             {/* Информация о текущем изображении */}
             <div
-              className={`absolute bottom-2 left-2 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-mono transition-opacity duration-300 ${
+              className={`absolute top-2 left-2 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-md text-white text-sm font-mono transition-opacity duration-300 ${
                 showControls ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -230,7 +226,7 @@ export default function ImageModal({ image, onClose, onPrev, onNext, allImages }
 
             {/* Название изображения */}
             <div
-              className={`absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-lg text-white font-light text-sm transition-opacity duration-300 max-w-[80%] ${
+              className={`absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-lg text-white font-light text-sm transition-opacity duration-300 max-w-[90%] ${
                 showControls ? "opacity-100" : "opacity-0"
               }`}
             >

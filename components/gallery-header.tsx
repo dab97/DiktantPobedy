@@ -14,7 +14,7 @@ interface GalleryHeaderProps {
 
 export default function GalleryHeader({ searchQuery, onSearchChange }: GalleryHeaderProps) {
   return (    
-    <header className="sticky top-0 z-40 backdrop-blur flex flex-col md:flex-row justify-between items-center transition-colors duration-500 lg:z-50 border border-slate-200 dark:border dark:border-slate-50/[0.06] dark:bg-black/80 bg-white/80 supports-backdrop-blur:bg-white/60 p-4 mb-4 gap-2 md:gap-4 shadow-md rounded-lg">
+    <header className="fixed container mx-auto top-1 z-40 backdrop-blur flex flex-col md:flex-row justify-between items-center transition-colors duration-500 lg:z-50 border border-slate-200 dark:border dark:border-slate-50/[0.06] dark:bg-black/80 bg-white/80 supports-backdrop-blur:bg-white/60 p-4 mb-4 gap-2 md:gap-4 shadow-md rounded-lg">
       <div className="flex items-center">
         <Logo className="h-10 mr-2 lg:mr-4 hidden md:inline-flex" />
         <h1 className="text-base lg:text-xl font-semibold text-gray-600 dark:text-gray-200">Сертификаты Диктанта Победы 2025</h1>
